@@ -6,17 +6,18 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 
 from server.models import db
+from server.db_connection import DATABASE_URL
 
 load_dotenv()
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://dev:dev@localhost:5432/database"
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 # Celery configuration
 app.config["CELERY_BROKER_URL"] = "redis://localhost:6379/0"
 app.config["CELERY_RESULT_BACKEND"] = "database"
-app.config["CELERY_RESULT_DBURI"] = "postgresql://dev:dev@localhost:5432/database"
+app.config["CELERY_RESULT_DBURI"] = DATABASE_URL
 app.config["CELERY_TRACK_STARTED"] = True
 app.config["CELERY_SEND_EVENTS"] = True
 app.config["BROKER_TRANSPORT_OPTIONS"] = {"visibility_timeout": 3600}

@@ -1,7 +1,7 @@
 from celery import Celery
 
 from server.app import app as flask_app
-from server.session_management import session_scope
+from server.db_connection import session_scope
 
 REDIS_URL = "redis://localhost:6379/0"
 

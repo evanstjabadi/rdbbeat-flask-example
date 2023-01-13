@@ -3,7 +3,7 @@ from flask import Blueprint, jsonify, request
 from rdbbeat.controller import Schedule, ScheduledTask, schedule_task
 
 from server.models import Employee
-from server.session_management import session_scope
+from server.db_connection import session_scope
 
 employee_router = Blueprint("employee_router", __name__, url_prefix="/api/v1")
 

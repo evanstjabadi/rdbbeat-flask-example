@@ -1,6 +1,6 @@
 from server.celery_worker import app
 from server.models import Employee, db
-from server.session_management import session_scope
+from server.db_connection import session_scope
 
 
 @app.task(name="birthday_greeting")
