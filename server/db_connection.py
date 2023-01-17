@@ -1,14 +1,18 @@
 """The base management for the database connection"""
 import logging
+import os
 from contextlib import contextmanager
 from functools import lru_cache
 from typing import Any, Callable, Generator
 
 import sqlalchemy.orm
+from dotenv import load_dotenv
 from sqlalchemy.engine import Engine
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = "postgresql://dev:dev@localhost:5432/database"
+load_dotenv()
+
+DATABASE_URL = os.environ["DATABASE_URL"]
 
 logger = logging.getLogger(__name__)
 

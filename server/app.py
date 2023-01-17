@@ -5,8 +5,8 @@ from flask import Flask
 from flask_cors import CORS
 from flask_migrate import Migrate
 
-from server.models import db
 from server.db_connection import DATABASE_URL
+from server.models import db
 
 load_dotenv()
 
@@ -36,4 +36,4 @@ app.register_blueprint(employee_router)
 
 @app.route("/")
 def index():
-    return "Learn to use ux-celery-scheduler!"
+    return "Learn to use the celery-rdbbeat scheduler!"
