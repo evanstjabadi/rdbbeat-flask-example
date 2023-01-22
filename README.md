@@ -5,10 +5,10 @@ This is a simple example of how to use `rdbbeat` with `Flask`.
 ## Getting Started with rdbbeat
 
 * Clone this repo
-* Start Redis on `localhost:6379/0`
-* Start postgres database and update the `DATABASE_URL` in `db_connection.py`
 * Install the requirements in `requirements.txt` (preferably in a virtualenv)
-* Ensure you have the `DATABASE_URL="postgresql://username:password@localhost:5432/database"` and `FLASK_APP=server/app.py` variables set in an `.env` file.
+* Start Redis on `localhost:6379/0` or update the `REDIS_URL` in the `celery_worker.py` if your url is different
+* Start postgres database and put the `DATABASE_URL` in the `.env` file. E.g, `DATABASE_URL="postgresql://username:password@localhost:5432/database"`
+* Put `FLASK_APP=server/app.py` in the `.env` file.
 * Run `rdbbeat` migration: `python -m alembic -n scheduler upgrade head`
 * Run the example's migrations: `python -m flask db upgrade` 
 
