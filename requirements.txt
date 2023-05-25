@@ -13,4 +13,4 @@ pydantic
 sqlalchemy_utils
 redis
 psycopg2-binary~=2.9.3
-# rdbbeat # Uncomment once rdbbeat is released
+rdbbeat
