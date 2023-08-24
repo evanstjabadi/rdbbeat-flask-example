@@ -17,3 +17,6 @@ This is a simple example of how to use `rdbbeat` with `Flask`.
 * Run the flask server: `python -m flask run`
 * Run the celery worker: `python -m celery --app=server.tasks worker --loglevel=info`
 * Run celery beat with custom scheduler: `python -m celery --app=server.tasks beat --loglevel=info --scheduler=rdbbeat.schedulers:DatabaseScheduler`
+
+## Output
+<img width="1407" alt="terminals' outputs" src="https://github.com/evanstjabadi/rdbbeat-flask-example/assets/31672668/91393478-a94d-4835-afe1-63209f012fa6">
