@@ -10,7 +10,7 @@ This is a simple example of how to use `rdbbeat` with `Flask`.
 * Start postgres database and put the `DATABASE_URL` in the `.env` file. E.g, `DATABASE_URL="postgresql://username:password@localhost:5432/database"`
 * Put `FLASK_APP=server/app.py` in the `.env` file.
 * Run `rdbbeat` migration: `python -m alembic -n scheduler upgrade head`
-* Run the example's migrations: `python -m flask db upgrade` 
+* Run the example's migrations: `python -m flask db upgrade` (you may need `export FLASK_APP=server.app` first)
 
 ## Running the example
 * Open 3 different terminals and run each command in each.
